@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     "/Users/ferhatibryamov/Documents/c/CAA/Семес_работа/output/zad"
+binary-path:     "/Users/lab/Desktop/University/c/CAA/Семес_работа/output/zad"
 relocations:     []
 ...

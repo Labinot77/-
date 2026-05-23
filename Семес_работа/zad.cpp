@@ -9,19 +9,11 @@ int N;
 char s[105];
 
 bool isValid(int pos) {
-    for (int len = 1; len * 2 <= pos + 1; len++) {
-        bool ok = true;
-
-        for (int i = 0; i < len; i++) {
-            if (s[pos - i] != s[pos - i - len]) {
-                ok = false;
-                break;
-            }
-        }
-
-        if (ok) return false; // found repeated adjacent substring
+    for (int len = 1; 2 * len <= pos + 1; len++) {
+        // Сравнява два съседни подниза с дължина 'len'
+        if (strncmp(&s[pos - 2*len + 1], &s[pos - len + 1], len) == 0)
+            return false;
     }
-
     return true;
 }
 
@@ -30,7 +22,7 @@ bool gen(int pos) {
         for (int i = 0; i < N; i++)
             cout << s[i];
         cout << endl;
-        return true; // stop after first solution
+        return true; 
     }
 
     for (char c : {'A', 'B', 'C'}) {
@@ -46,6 +38,7 @@ bool gen(int pos) {
 }
 
 int main() {
+    cout << "Въведи число: "; 
     cin >> N;
     gen(0);
 }
