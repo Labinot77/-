@@ -66,13 +66,10 @@ int main() {
     return 0;
 }
 
-void addPlayer(Leaderboard &players,
-               const string &name,
-               int score) {
-
+void addPlayer(Leaderboard &players, const string &name, int score) {
     players.push_back({name, score});
 
-    cout << "Играчът е добавен!\n";
+    cout << "Играчът е добавен!" << endl;
 }
 
 void sortLeaderboard(Leaderboard &players) {
@@ -84,31 +81,21 @@ void sortLeaderboard(Leaderboard &players) {
         return a.second > b.second;
     });
 
-    cout << "Leaderboard е сортиран!\n";
+    cout << "Сортиран!" << endl;
 }
 
 void showLeaderboard(const Leaderboard &players) {
-
     if (players.empty()) {
 
-        cout << "Няма играчи!\n";
+        cout << "Няма играчи!" << endl;
 
         return;
     }
 
-    cout << "\n===== LEADERBOARD =====\n";
-
     int rank = 1;
 
     for (const auto &player : players) {
-
-        cout << rank
-             << ". "
-             << player.first
-             << " | Score: "
-             << player.second
-             << endl;
-
+        cout << rank << ". " << player.first << " | Score: " << player.second << endl;
         rank++;
     }
 }

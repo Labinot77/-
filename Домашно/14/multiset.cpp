@@ -128,5 +128,5 @@ void mostPopularMovie(const Tickets &tickets) {
         }
     }
 
-    cout << "Най-популярен филм: " << bestMovie  << " | Билети: " << maxTickets << endl;
+    cout << "Най-популярен филм: " << bestMovie << endl;
 }

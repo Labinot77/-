@@ -12,7 +12,6 @@ void searchProduct(const stock &inventory, const string &name);
 
 int main() {
     stock inventory;
-
     int choice;
 
     do {

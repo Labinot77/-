@@ -92,9 +92,9 @@ void del_node(link *gr[n], char c) {
         for (i = 0; i < n; i++)
             if (gr[i]) {
                 p = gr[i];
-                while ((p->key != c) && (p->next != NULL))
-                    { q = p; 
-                      p = p->next; 
+                while ((p->key != c) && (p->next != NULL)) { 
+                    q = p; 
+                    p = p->next; 
                     }
                 if (p->key == c) { 
                     q->next = p->next; 
@@ -109,8 +109,11 @@ void del_arc(link *gr[n], char c1, char c2) {
         int i = 0;
         while (gr[i]->key != c1) i++;
         link *p = gr[i], *q;
-        while (p->key != c2)
-            { q = p; p = p->next; }
+        while (p->key != c2) { 
+            q = p;
+            p = p->next; 
+        }
+
         q->next = p->next;
         delete p;
     }
